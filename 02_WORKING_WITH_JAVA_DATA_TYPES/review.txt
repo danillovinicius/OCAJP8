@@ -1,0 +1,143 @@
+Summary
+In this chapter, we started with the primitive data types in Java,
+including examples of where to use each of the kinds and their literal values.
+We also categorized the primitives into character type, integer type, and floating type.
+Then we covered the ingredients of valid and invalid Java identifiers.
+We covered the differences between primitive and reference types.
+
+We discussed the operators used to manipulate primitives (limited to the ones required for the
+OCA Java SE 8 Programmer I exam). We also covered the conditions in which a
+particular operator can be used. For example, if you wish to check whether a set of
+conditions is true, you can use the logical operators. It’s also important to
+understand the operand types that can be used for each of these operators.
+For example, you can’t use boolean operands with the operators >, >=, =<, and <.
+We discussed the wrapper classes, including their class hierarchy, creating their instances,
+retrieving primitive values stored by wrapper class instance, parsing string values to primitive types,
+and comparing instances of wrapper classes. At the end of the chapter, we covered autoboxing and unboxing.
+
+Primitive data types:
+■ Java defines eight primitive data types: char, byte, short, int, long, float, double, and boolean.
+■ Primitive data types are the simplest data types.
+■ Primitive data types are predefined by the programming language. A user can’t
+define a primitive data type in Java.
+■ It’s helpful to categorize the primitive data types as Boolean, numeric,
+and character data types. The boolean data type:
+■ The boolean data type is used to store data with only two possible values. These two possible
+values may be thought of as yes/no, 0/1, true/false, or any other combination.
+The actual values that a boolean can store are true and false.
+Numeric data types:
+■ Numeric values can be stored as either integers or decimal numbers.
+■ byte, short, int, and long can be used to store integers.
+■ The byte, short, int, and long data types use 8, 16, 32, and 64 bits, respectively,
+to store their values.
+■ float and double can be used to store decimal numbers.
+■ The float and double data types use 32 and 64 bits, respectively, to store their
+values.
+■ The default type of integers—that is, nondecimal numbers—is int.
+■ To designate an integer literal value as a long value, add the suffix L or l to the
+literal value.
+■ Numeric values can be stored in binary, octal, decimal, and hexadecimal num-
+ber formats. This exam won’t ask you to convert a number from one number
+system to another.
+■ Literal values in the decimal number system use digits from 0 to 9 (a total of
+10 digits).
+■ Literal values in the octal number system use digits from 0 to 7 (a total of
+8 digits).
+■ Literal values in the hexadecimal number system use digits from 0 to 9 and let-
+ters from A to F (a total of 16 digits and letters).
+■ Literal values in the binary number system use digits 0 and 1 (a total of 2 digits).
+■ The literal values in the octal number system start with the prefix 0. For exam-
+ple, 0413 in the octal number system is 267 in the decimal number system.
+■ The literal values in the hexadecimal number system start with the prefix 0x. For example, 0x10B in the hexadecimal number system is 267 in the decimal
+number system.
+■ The literal values in the binary number system start with the prefix 0b or 0B. For
+example, the decimal value 267 is 0B100001011 in the binary system.
+■ Starting with Java 7, you can use underscores within the Java literal values to make them more readable. 0B1_0000_10_11, 0_413, and 0x10_B are valid
+binary, octal, and hexadecimal literal values.
+■ The default type of a decimal number is double.
+■ To designate a decimal literal value as a float value, add the suffix F or f to the
+literal value.
+■ The suffixes D and d can be used to mark a literal value as a double value.
+Though it’s allowed, doing so is not required because the default value of deci- mal literals is double.
+Character primitive data types:
+■ A char data type can store a single 16-bit Unicode character; that is, it can store characters from virtually all the world’s existing scripts and languages.
+■ You can use values from \u0000 (or 0) to a maximum of \uffff (or 65,535 inclusive) to store a char. Unicode values are defined in the hexadecimal num- ber system.
+■ Internally, the char data type is stored as an unsigned integer value (only posi- tive integers).
+■ When you assign a letter to a char, Java stores its integer equivalent value. You may assign a positive integer value to a char instead of a letter, such as 122.
+■ The literal value 122 is not the same as the Unicode value \u0122. The former is a decimal number and the latter is a hexadecimal number.
+■ Single quotes, not double quotes, are used to assign a letter to a char variable. Valid identifiers:
+■ A valid identifier starts with a letter (a–z, upper- or lowercase), a currency sign, or an underscore. There is no limit to its length.
+■ A valid identifier can contain digits but not in the starting place.
+■ A valid identifier can use the underscore and currency sign at any position of
+the identifier.
+■ A valid identifier can’t have the same spelling as a Java keyword, such as switch.
+■ A valid identifier can’t use any special characters, including !, @, #, %, ^, &, *, (,
+),',:,;,[,/,\, and}.
+Assignment operators:
+■ Assignment operators can be used to assign or reassign values to all types of variables.
+■ A variable can’t be assigned to an incompatible value. For example, character and numeric values can’t be assigned to a boolean variable and vice versa.
+■ += and -= are short forms of addition/subtraction and assignment.
+■ += can be read as “first add and then assign” and -= can be read as “first subtract
+and then assign.” Arithmetic operators:
+■ Arithmetic operators can’t be used with the boolean data type. Attempting to do so will make the code fail to compile.
+■ ++ and –- are unary increment and decrement operators. These operators work with single operands.
+■ Unary operators can be used in prefix or postfix notation.
+■ When the unary operators ++ and -- are used in prefix notation, the value of the
+variable increments/decrements just before the variable is used in an expression.
+■ When the unary operators ++ and -- are used in postfix notation, the value of the variable increments/decrements just after the variable is used in an expression.
+■ By default, unary operators have a higher precedence than multiplication oper- ators and addition operators.
+Relational operators:
+■ Relational operators are used to compare values for equality (==) and inequal- ity (!=). They’re also used to determine whether two numeric values are greater than (>, >=) or less than (<, <=) each other.
+■ You can’t compare incomparable values. For example, you can’t compare a boolean with an int, a char, or a floating-point number. If you try to do so, your code will not compile.
+■ The operators equal to (==) and not equal to (!=) can be used to compare all types of primitives: char, byte, short, int, long, float, double, and boolean.
+■ The operator == returns true if the primitive values being compared are equal.
+■ The operator != returns true if the primitive values being compared are not equal.
+■ The result of the relational operator is always a boolean value. Logical operators:
+■ You can use the logical operators to determine whether a set of conditions is true or false and proceed accordingly.
+■ Logical AND (&&) evaluates to true if all operands are true and false otherwise.
+■ Logical OR (||) evaluates to true if any or all the operands are true.
+■ Logical negation (!) negates the boolean value. It evaluates to true for false
+and vice versa.
+■ The result of a logical operation is always a boolean value.
+■ The logical operators && and || are also called short-circuit operators. If these
+operators can determine the output of the expression with the evaluation of the
+first operand, they don’t evaluate the second operand.
+■ The && operator returns true only if both of the operands are true. If the first
+operand to this operator evaluates to false, the result can never be true.
+Therefore, && does not evaluate the second operand.
+■ Similarly, the || operator returns true if any of the operands is true. If the first
+operand to this operator evaluates to true, the result can never be false. Therefore, || does not evaluate the second operator.
+Wrapper classes:
+■ The wrapper classes are used to wrap primitives in an object, so they can be added to a collection object.
+■ All the wrapper classes are immutable.
+■ You can create objects of all the wrapper classes in multiple ways:
+– Assignment—By assigning a primitive to a wrapper class variable (autoboxing)
+– Constructor—By using wrapper class constructors
+– Static methods —By calling the static method of wrapper classes, like valueOf()
+■ All wrapper classes (except Character) define a constructor that accepts a
+String argument representing the primitive value that needs to be wrapped.
+■ None of the wrapper class defines a no-argument constructor.
+■ You can assign a primitive value directly to a reference variable of its wrapper
+class type, called autoboxing. The reverse is unboxing, when an object of a
+primitive wrapper class is converted to its corresponding primitive value.
+■ All wrapper classes define methods of the format primitive Value(), where the
+term primitive refers to the exact primitive data type name.
+■ To get a primitive data type value corresponding to a string value, you can use
+the static utility method parseDataType, where DataType refers to the type of the
+return value.
+■ The valueOf() method returns an object of the corresponding wrapper class
+when it’s passed an argument of a primitive type or String.
+■ You can compare objects of wrapper classes for equality by using the method
+equals or the comparison operator, ==.
+■ The method equals always compares the primitive value stored by a wrapper
+instance and == compares object references. The operator == returns true if
+the variables being compared refer to the same instance.
+■ In the case of the Boolean class, the cached instances are accessible directly
+because only two exist: the static constants Boolean.TRUE and Boolean.FALSE.
+■ The Character class caches instances with values from 0 to 127. Classes Byte, Short, Integer, and Long cache instances for values -128 to 127. No cached
+instances exist for the Float and Double wrapper classes.
+■ Wrapper classes are immutable. Adding a primitive value to a wrapper class vari-
+able doesn’t modify the value of the object it refers to. The wrapper class vari-
+able is assigned a new object.
+■ Unboxing a wrapper reference variable, which refers to null, will throw a Null-
+PointerException.
